@@ -15,10 +15,10 @@ const RegForm = ({ setData, setStatus, status, setError }) => {
     e.preventDefault();
     setStatus("oh look magic, abra cadabara...");
     getData().catch((err) => {
-      setError("Error fetching data, try again.");
+      setError("Error fetching data, trying again.");
       setData(null);
 
-      // on error reru the query
+      // on error rerun the query
       axios.get(`/api/${regNumber}`).then((result) => {
         setData(result.data.text);
         setError(null);
