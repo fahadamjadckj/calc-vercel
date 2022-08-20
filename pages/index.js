@@ -19,7 +19,7 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   const invokeError = (err) => {
-    setStatus(null);
+    // setStatus(null);
     setError(err);
   };
 
