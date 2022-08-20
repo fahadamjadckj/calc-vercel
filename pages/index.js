@@ -5,8 +5,15 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import RegForm from "../components/RegForm";
 import Footer from "../components/Footer";
+import DataDisplay from "../components/DataDisplay";
 
 export default function Home() {
+  useEffect(() => {
+    axios
+      .get("/api/coldstart")
+      .catch((err) => console.log("initiated coldstart"));
+  });
+
   const [data, setData] = useState(null);
   const [status, setStatus] = useState(null);
   const [error, setError] = useState(null);
@@ -29,7 +36,7 @@ export default function Home() {
           />
         </div>
       )}
-      {data && <p>data page</p>}
+      {data && <DataDisplay data={data} />}
       <Footer></Footer>
     </>
   );
