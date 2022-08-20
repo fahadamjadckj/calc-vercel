@@ -22,15 +22,7 @@ const RegForm = ({ setData, setStatus, status, setError, data }) => {
       // on error rerun the query
       setStatus("oh refetching");
       setError(null);
-      while (!data) {
-        axios
-          .get(`/api/${regNumber}`)
-          .then((result) => {
-            setData(result.data.text);
-            setStatus(null);
-          })
-          .catch((err) => console.log(err));
-      }
+      getData().then(() => console.log("refetched"));
     });
   };
 
