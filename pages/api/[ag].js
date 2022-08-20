@@ -5,6 +5,7 @@ const chrome = require("chrome-aws-lambda");
 const { sortBySemesters } = require("../../lib/semesterCount");
 
 export default async function handler(req, res) {
+  const { ag } = req.query;
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,
@@ -13,7 +14,7 @@ export default async function handler(req, res) {
   let page = await browser.newPage();
   await page.goto("http://lms.uaf.edu.pk/login/index.php");
 
-  await page.type("#REG", "2020-ag-8322");
+  await page.type("#REG", ag);
 
   await Promise.all([
     page.click("input[value=Result]"),
