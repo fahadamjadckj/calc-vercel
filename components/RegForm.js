@@ -8,7 +8,7 @@ const RegForm = ({ setData, setStatus, status, setError }) => {
 
   const getData = async () => {
     const result = await axios.get(`/api/${regNumber}`);
-    setData(result.data);
+    setData(result.data.text);
   };
 
   const submitHandler = (e) => {
