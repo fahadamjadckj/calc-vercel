@@ -13,5 +13,5 @@ export default async function handler(req, res) {
   const page = await browser.newPage();
   await page.goto("https://www.wikipedia.com");
   let title = await page.title();
-  res.status(200).json({ name: "title" });
+  res.status(200).json({ name: title });
 }
