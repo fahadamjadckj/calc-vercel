@@ -49,7 +49,7 @@ const RegForm = ({ setData, setStatus, status, setError }) => {
               onChange={(e) => setRegNumber(e.target.value)}
             />
             <Form.Text className="text-muted">
-              We'll never share your ag number with anyone else.
+              We will never share your ag number with anyone else.
             </Form.Text>
           </Form.Group>
 
