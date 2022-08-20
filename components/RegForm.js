@@ -22,9 +22,13 @@ const RegForm = ({ setData, setStatus, status, setError, data }) => {
       setStatus("oh refetching");
       setError(null);
       while (!data) {
-        axios.get(`/api/${regNumber}`).then((result) => {
-          setData(result.data.text);
-        });
+        axios
+          .get(`/api/${regNumber}`)
+          .then((result) => {
+            setData(result.data.text);
+            setStatus(null);
+          })
+          .catch((err) => console.log(err));
       }
     });
   };
