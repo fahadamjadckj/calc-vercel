@@ -2,6 +2,7 @@
 
 const puppeteer = require("puppeteer-core");
 const chrome = require("chrome-aws-lambda");
+const { sortBySemesters } = require("../../lib/semesterCount");
 
 export default async function handler(req, res) {
   const browser = await puppeteer.launch({
@@ -39,5 +40,6 @@ export default async function handler(req, res) {
   });
 
   let title = await page.title();
-  res.status(200).json({ text: JSON.stringify(data) });
+  const sorted = sortBySemesters(data);
+  res.status(200).json({ text: JSON.stringify(sorted) });
 }
