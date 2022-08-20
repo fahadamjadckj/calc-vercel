@@ -12,6 +12,7 @@ export default async function handler(req, res) {
 
   const page = await browser.newPage();
   await page.goto("http://lms.uaf.edu.pk/login/index.php");
+  let regNumber = "2020-ag-8322";
   await page.type("#REG", regNumber);
   await Promise.all([
     page.click("input[value=Result]"),
