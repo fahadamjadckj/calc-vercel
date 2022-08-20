@@ -19,9 +19,10 @@ const RegForm = ({ setData, setStatus, status, setError }) => {
       setData(null);
 
       // on error rerun the query
+      setStatus("oh refetching");
+      setError(null);
       axios.get(`/api/${regNumber}`).then((result) => {
         setData(result.data.text);
-        setError(null);
       });
     });
   };
