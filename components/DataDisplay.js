@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import Table from "react-bootstrap/Table";
 import BackNav from "./BackNav";
 
