@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-const RegForm = ({ setData, setStatus, status, setError }) => {
+const RegForm = ({ setData, setStatus, status, setError, data }) => {
   const [regNumber, setRegNumber] = useState("");
 
   const getData = async () => {
@@ -21,9 +21,11 @@ const RegForm = ({ setData, setStatus, status, setError }) => {
       // on error rerun the query
       setStatus("oh refetching");
       setError(null);
-      axios.get(`/api/${regNumber}`).then((result) => {
-        setData(result.data.text);
-      });
+      while (!data) {
+        axios.get(`/api/${regNumber}`).then((result) => {
+          setData(result.data.text);
+        });
+      }
     });
   };
 

@@ -30,14 +30,15 @@ export default function Home() {
       <h2 style={{ textAlign: "center", marginTop: "10px", color: "grey" }}>
         GPA CALCULATOR
       </h2>
+      <Loading status={status}></Loading>
       {!data && (
         <div>
-          <Loading status={status}></Loading>
           <RegForm
             setData={setData}
             setStatus={setStatus}
             status={status}
             setError={invokeError}
+            data={data}
           />
         </div>
       )}

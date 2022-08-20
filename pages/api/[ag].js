@@ -6,6 +6,7 @@ const { sortBySemesters } = require("../../lib/semesterCount");
 
 export default async function handler(req, res) {
   const { ag } = req.query;
+
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,
