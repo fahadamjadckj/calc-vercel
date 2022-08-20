@@ -41,5 +41,5 @@ export default async function handler(req, res) {
 
   let title = await page.title();
   const sorted = await sortBySemesters(data);
-  res.status(200).json({ text: JSON.stringify(sorted) });
+  res.status(200).json({ text: sorted });
 }
