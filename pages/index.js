@@ -12,7 +12,7 @@ export default function Home() {
     axios
       .get("/api/coldstart")
       .catch((err) => console.log("initiated coldstart"));
-  });
+  }, []);
 
   const [data, setData] = useState(null);
   const [status, setStatus] = useState(null);

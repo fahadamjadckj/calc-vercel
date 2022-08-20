@@ -26,26 +26,6 @@ const DataDisplay = ({ data }) => {
           </tbody>
         </Table>
       </div>
-
-      <div className="resultTable">
-        <div className="tableText">
-          <h3>Semeset Viz</h3>
-        </div>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Names</th>
-              <th>GPA</th>
-            </tr>
-            {data.student.semNames.map((sem) => (
-              <tr key={sem}>
-                <th>{sem}</th>
-                <td>{data[sem][data[sem].length - 1].gpa.toFixed(2)}</td>
-              </tr>
-            ))}
-          </thead>
-        </Table>
-      </div>
     </div>
   );
 };
