@@ -4,7 +4,6 @@ import BackNav from "./BackNav";
 const DataDisplay = ({ data }) => {
   return (
     <div className="container">
-      <BackNav></BackNav>
       <div className="resultTable">
         <div className="tableText">
           <h3>Collective</h3>
