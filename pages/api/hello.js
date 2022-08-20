@@ -4,23 +4,8 @@ const puppeteer = require("puppeteer-core");
 const chrome = require("chrome-aws-lambda");
 
 export default async function handler(req, res) {
-  await processedData(res, 10000);
-}
-
-async function processedData(res, duration) {
-  const id = setTimeout(() => {
-    res.json({ message: "some error fetching data" });
-  });
-
-  try {
-    let data = await getData();
-    clearTimeout(id);
-    res.json(data);
-  } catch (e) {
-    res.status(500).json({
-      message: e.message,
-    });
-  }
+  const data = await getData();
+  res.json({ data });
 }
 
 async function getData() {
