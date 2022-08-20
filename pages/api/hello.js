@@ -24,26 +24,9 @@ async function getData() {
     page.waitForNavigation(),
   ]);
 
-  let data = await page.evaluate(() => {
-    let values = [];
-    let tableRows = document.querySelectorAll("tr");
-
-    tableRows.forEach((row) => {
-      let children = {};
-      let index = 0;
-      row.childNodes.forEach((child) => {
-        if (child.innerText != null) {
-          children[index] = child.innerText;
-          index++;
-        }
-      });
-      values.push(children);
-    });
-
-    return values;
-  });
+  let title = await page.title();
 
   await browser.close();
 
-  return data;
+  return title;
 }
