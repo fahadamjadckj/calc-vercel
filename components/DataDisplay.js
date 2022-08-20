@@ -1,6 +1,6 @@
-import { Typography } from '@mui/material'
-import Table from 'react-bootstrap/Table'
-import BackNav from './BackNav'
+import { Typography } from "@mui/material";
+import Table from "react-bootstrap/Table";
+import BackNav from "./BackNav";
 
 const DataDisplay = ({ data }) => {
   return (
@@ -39,18 +39,16 @@ const DataDisplay = ({ data }) => {
               <th>GPA</th>
             </tr>
             {data.student.semNames.map((sem) => (
-              <tr>
-                <th key={sem}>{sem}</th>
-                <td key={sem + 1}>
-                  {data[sem][data[sem].length - 1].gpa.toFixed(2)}
-                </td>
+              <tr key={sem}>
+                <th>{sem}</th>
+                <td>{data[sem][data[sem].length - 1].gpa.toFixed(2)}</td>
               </tr>
             ))}
           </thead>
         </Table>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DataDisplay
+export default DataDisplay;
