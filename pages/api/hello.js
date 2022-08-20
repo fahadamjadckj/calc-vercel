@@ -39,5 +39,5 @@ export default async function handler(req, res) {
   });
 
   let title = await page.title();
-  res.status(200).json({ text: title });
+  res.status(200).json({ text: JSON.stringify(values) });
 }
