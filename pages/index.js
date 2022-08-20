@@ -1,11 +1,11 @@
 import axios from "axios";
-import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import RegForm from "../components/RegForm";
 import Footer from "../components/Footer";
 import DataDisplay from "../components/DataDisplay";
+import NavMen from "../components/Navbar";
+import Error from "../components/Error";
 
 export default function Home() {
   useEffect(() => {
@@ -25,6 +25,11 @@ export default function Home() {
 
   return (
     <>
+      <NavMen></NavMen>
+      <Error error={error} />
+      <h2 style={{ textAlign: "center", marginTop: "10px", color: "grey" }}>
+        GPA CALCULATOR
+      </h2>
       {!data && (
         <div>
           <Loading status={status}></Loading>

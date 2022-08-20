@@ -1,40 +1,21 @@
-import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
-import IconButton from '@mui/material/IconButton'
-import SearchIcon from '@mui/icons-material/Search'
-import Typography from '@mui/material/Typography'
-import TagFacesIcon from '@mui/icons-material/TagFaces'
-import PetsIcon from '@mui/icons-material/Pets'
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
-function Navbar() {
+function NavMen() {
   return (
-    <div>
-      <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <IconButton
-          onClick={() => (window.location.href = 'http://localhost:3000')}
-        >
-          <TagFacesIcon />
-        </IconButton>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1 }}
-        >
-          {'Hello '}
-          <PetsIcon />
-        </Typography>
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
-      </Toolbar>
-    </div>
-  )
+    <>
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">Ava</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="#features">About</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
+  );
 }
 
-export default Navbar
+export default NavMen;
