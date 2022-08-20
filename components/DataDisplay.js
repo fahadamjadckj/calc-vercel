@@ -28,7 +28,7 @@ const DataDisplay = ({ data }) => {
 
       <div className="resultTable">
         <div className="tableText">
-          <h3>Semeset Viz</h3>
+          <h3>Semeseter Viz</h3>
         </div>
         <Table striped bordered hover>
           <thead>
