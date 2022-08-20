@@ -9,6 +9,7 @@ export default async function handler(req, res) {
     executablePath: await chrome.executablePath,
     headless: chrome.headless,
   });
+  let page = await browser.newPage();
   await page.goto("http://lms.uaf.edu.pk/login/index.php");
   let title = await page.title();
   res.status(200).json({ text: title });
