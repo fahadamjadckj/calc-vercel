@@ -41,7 +41,6 @@ export default async function handler(req, res) {
     return values;
   });
 
-  let title = await page.title();
-  const sorted = await sortBySemesters(data);
-  res.status(200).json({ text: sorted });
+  // const sorted = await sortBySemesters(data);
+  res.status(200).json({ text: data });
 }
