@@ -41,6 +41,6 @@ export default async function handler(req, res) {
     return values;
   });
 
-  // const sorted = await sortBySemesters(data);
-  res.status(200).json({ text: data });
+  const sorted = await sortBySemesters(data);
+  res.status(200).json({ text: sorted });
 }

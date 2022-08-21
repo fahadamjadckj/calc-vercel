@@ -8,11 +8,11 @@ import NavMen from "../components/Navbar";
 import Error from "../components/Error";
 
 export default function Home() {
-  // useEffect(() => {
-  //   axios
-  //     .get("/api/coldstart")
-  //     .catch((err) => console.log("initiated coldstart"));
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("/api/coldstart")
+      .catch((err) => console.log("initiated coldstart"));
+  }, []);
 
   const [data, setData] = useState(null);
   const [status, setStatus] = useState(null);

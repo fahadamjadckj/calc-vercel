@@ -22,7 +22,11 @@ const RegForm = ({ setData, setStatus, status, setError, data }) => {
       // on error rerun the query
       setStatus("oh refetching");
       setError(null);
-      getData().then(() => console.log("refetched"));
+      getData()
+        .then(() => console.log("refetched"))
+        .catch((err) => {
+          setError(err);
+        });
     });
   };
 
