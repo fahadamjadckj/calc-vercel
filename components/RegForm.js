@@ -25,7 +25,7 @@ const RegForm = ({ setData, setStatus, status, setError, data }) => {
       getData()
         .then(() => console.log("refetched"))
         .catch((err) => {
-          setError(err);
+          setError("Some error occured, please try again.");
         });
     });
   };
