@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   const { ag } = req.query;
 
   const browser = await puppeteer.launch({
-    args: chrome.args,
+    args: ['--proxy-server=119.160.107.86:3128','--no-sandbox', '--disable-setuid-sandbox'],
     executablePath: await chrome.executablePath,
     headless: chrome.headless,
   });
